@@ -54,8 +54,8 @@ angular.module('clientApp')
 		 'iconColor':'post-icon-red',
 		 'date':'1288323623006',
 		 'buttons':[
-			 {'name':'approve','class':'balanced'},
-			 {'name':'deny','class':'assertive'},
+			 {'name':'approve','class':'balanced','function':'approved()',},
+			 {'name':'deny','class':'assertive','function':'modal.show()',},
 		 ]},
 		{'name':'Requested Schedule Change',
 		 'number':1,
@@ -75,11 +75,12 @@ angular.module('clientApp')
 		 'displayName':'Fullscreen Image',
 		 'icon':'ion-ios7-calendar',
 		 'active':true,
+		 'approved':false,
 		 'iconColor':'post-icon-red',
 		 'date':'1288323623006',
 		 'buttons':[
-			 {'name':'approve','class':'balanced'},
-			 {'name':'deny','class':'assertive'},
+			 {'name':'approve','class':'balanced','function':'approved()'},
+			 {'name':'deny','class':'assertive','function':'modal.show()'}
 		 ]},
 		];
  //modal 
@@ -93,4 +94,7 @@ angular.module('clientApp')
 	$timeout(function() {
     $ionicScrollDelegate.scrollBottom([true]);
   },3000);
+	$scope.approved = function(){
+		
+	}
   });

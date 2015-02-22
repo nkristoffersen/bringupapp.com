@@ -38,7 +38,7 @@
 									<h2 class="upbringing-title">{{post.name}}</h2>
 									<p>{{post.details}}</p>
 									<div class="button-bar">
-										<a href="#0" class="button button-{{button.class}} " ng-repeat="button in post.buttons" ng-click="modal.show()" ng-if="post.active">{{button.name}}</a>
+										<a href="#0" class="button button-{{button.class}} " ng-click="{{button.function}}" ng-repeat="button in post.buttons"  ng-if="post.active">{{button.name}}</a>
 									</div>
 
 								</div> <!-- cd-timeline-content -->
