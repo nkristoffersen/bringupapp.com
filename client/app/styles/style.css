@@ -139,15 +139,15 @@ header h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 	text-align:center;
 	padding-top:4px;
 }
 .cd-timeline-img i {
-  font-size:30px;
+  font-size:40px;
 	color:#fff;
 }
 .cd-timeline-img.cd-picture {

@@ -7,6 +7,16 @@
 .post-icon-red{
 	background:#ed0404;
 }
+.post-avatar-man{
+	background:url('../images/George-Clooney-Funny-Face.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.post-avatar-woman{
+	background:url('../images/courtneylove.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date{
 	font-size:20px;
 	font-family: 'Open Sans', sans-serif;

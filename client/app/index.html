@@ -25,9 +25,9 @@
 
 		<!-- Add your site or application content here -->
 		<ion-tabs class="tabs-positive tabs-icon-only" ng-controller="MainCtrl">
-			<ion-tab title="Message" icon-on="ion-ios7-chatboxes" icon-off="ion-ios7-chatboxes-outline" badge="3">
+			<ion-tab title="Message"   overflow-scroll="true" icon-on="ion-ios7-chatboxes" icon-off="ion-ios7-chatboxes-outline" badge="2">
 				<!-- Tab 1 content -->
-				<ion-content overflow-scroll="false" class="timeline-container">
+				<ion-content class="timeline-container" scroll="true" >
 					<section id="cd-timeline" class="cd-container">
 							<div class="cd-timeline-block" ng-repeat="post in posts" >
 								<div class="cd-timeline-img {{post.iconColor}}">
@@ -35,7 +35,7 @@
 								</div> <!-- cd-timeline-img -->
 								<div class="cd-timeline-content"ng-class="{'post-active': post.active}">
 									<div class="cd-date upbringing-date">{{post.date | date:"MM/dd/yyyy 'at' h:mma"}}</div>
-									<h2 class="upbringing-title"><span>Nick</span> {{post.name}}</h2>
+									<h2 class="upbringing-title">{{post.name}}</h2>
 									<p>{{post.details}}</p>
 									<div class="button-bar">
 										<a href="#0" class="button button-{{button.class}} " ng-repeat="button in post.buttons" ng-click="modal.show()" ng-if="post.active">{{button.name}}</a>
@@ -134,7 +134,6 @@
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
-		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/ionic/release/js/ionic.bundle.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
