@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope,$ionicModal) {
 	$scope.posts = [
 		{'name':'Picked Up Child On Time',
 		 'number':1,
@@ -32,4 +32,9 @@ angular.module('clientApp')
 			 {'name':'deny','class':'assertive'},
 		 ]},
 		];
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
   });
