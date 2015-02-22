@@ -50,8 +50,11 @@
 									<p>{{post.details}}</p>
 									<div class="badge-image" ng-if="post.badge" style="background:url('images/badges/{{post.badge}}')">
 									</div>
+									<div class="check-mark" style="visibility: hidden;">
+										<i class="icon ion-checkmark-circled"></i>
+									</div>
 									<div class="button-bar">
-										<a href="#0" class="button button-{{button.class}} " ng-click="{{button.function}}" ng-repeat="button in post.buttons"  ng-if="post.active">{{button.name}}</a>
+										<a href="#0" class="button button-{{button.class}} " ng-click="{{button.function}}" ng-repeat="button in post.buttons"  ng-if="post.active" onclick="disappear(this)">{{button.name}}</a>
 									</div>
 
 								</div> <!-- cd-timeline-content -->
@@ -136,6 +139,25 @@
 					</ion-footer>
 				</ion-modal-view>
 		</script>
+		<script type="text/javascript">
+            function disappear(obj) {
+                obj.parentNode.style.display = "none";
+                var elem = null;
+                var grandpa = obj.parentNode.parentNode;
+                for (var i=0; i<grandpa.childNodes.length; i++) {
+                	if (grandpa.childNodes[i].className == "check-mark") {
+                		elem = grandpa.childNodes[i];
+                		break;
+                	}
+                }
+                grandpa.style.backgroundColor = "#B2EA57";
+                elem.style.visibility = "visible";
+                elem.style.fontSize="100px";
+                elem.style.width="100%";
+                elem.style.textAlign="center";
+            }
+
+        </script>
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
