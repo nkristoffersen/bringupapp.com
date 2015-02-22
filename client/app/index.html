@@ -18,13 +18,24 @@
 		<!-- endbuild -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,800' rel='stylesheet' type='text/css'>
 	</head>
-	<body ng-app="clientApp" >
+	<body ng-app="clientApp" ng-controller="MainCtrl">
+		<div class="login-page" ng-class="{'login-hide':loginHidden}">
+			<div class="bringup-name">
+				BRINGUP
+			</div>
+			<div class="bringup-logo">
+				
+			</div>
+			<a class="button button-positive button-block" ng-click="loginHide()">
+				<i class="icon ion-social-facebook"></i> LOGIN WITH FACEBOOK
+			</a>
+		</div>
 		<!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 		<!-- Add your site or application content here -->
-		<ion-tabs class="tabs-positive tabs-icon-only" ng-controller="MainCtrl">
+		<ion-tabs class="tabs-positive tabs-icon-only" >
 			<ion-tab title="Message"   overflow-scroll="true" icon-on="ion-ios7-chatboxes" icon-off="ion-ios7-chatboxes-outline" badge="2">
 				<!-- Tab 1 content -->
 				<ion-content class="timeline-container" scroll="true" >
@@ -37,6 +48,8 @@
 									<div class="cd-date upbringing-date">{{post.date | date:"MM/dd/yyyy 'at' h:mma"}}</div>
 									<h2 class="upbringing-title">{{post.name}}</h2>
 									<p>{{post.details}}</p>
+									<div class="badge-image" ng-if="post.badge" style="background:url('images/badges/{{post.badge}}')">
+									</div>
 									<div class="button-bar">
 										<a href="#0" class="button button-{{button.class}} " ng-click="{{button.function}}" ng-repeat="button in post.buttons"  ng-if="post.active">{{button.name}}</a>
 									</div>
@@ -112,6 +125,15 @@
 							</div>
 						</div>
 					</ion-content>
+					<ion-footer class="bar bar-footer bar-dark item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Add Note to Journal">
+  </label>
+  <button class="button button-clear" ng-click="modal.hide()">
+    Save
+  </button>
+					</ion-footer>
 				</ion-modal-view>
 		</script>
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

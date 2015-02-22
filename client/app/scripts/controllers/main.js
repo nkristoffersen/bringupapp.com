@@ -10,7 +10,18 @@
 angular.module('clientApp')
   .controller('MainCtrl', function ($scope,$ionicModal,$ionicScrollDelegate,$timeout) {
 	$scope.posts = [
-		{'name':'George Picked Up Child On Time',
+		{'name':'George Picked Up Suzie',
+		 'number':1,
+		 'displayName':'Fullscreen Image',
+		 'icon':'',
+		 'active':false,
+		 'iconColor':'post-avatar-man',
+		 'date':'1288323623006',
+		 'buttons':[
+			 {'name':'reply','class':'default'},
+			 {'name':'get help','class':'default'}
+		 ]},
+		{'name':'George Earned ',
 		 'number':1,
 		 'displayName':'Fullscreen Image',
 		 'icon':'',
@@ -45,25 +56,24 @@ angular.module('clientApp')
 			 {'name':'approve','class':'balanced'},
 			 {'name':'deny','class':'assertive'},
 		 ]},
-		{'name':'Requested Schedule Change',
+		{'name':'Congratulations on the smooth drop off! Courtney earned the Happy Transition Badge and 5 points!',
 		 'number':1,
-		 'details':'Requesting pickup time change from 4PM to 5PM on 11/12',
+		 'details':'',
+		 'badge':'punctual_award.jpg',
 		 'displayName':'Fullscreen Image',
-		 'icon':'ion-ios7-calendar',
+		 'icon':'',
 		 'active':false,
-		 'iconColor':'post-icon-red',
+		 'iconColor':'post-avatar-woman',
 		 'date':'1288323623006',
 		 'buttons':[
-			 {'name':'approve','class':'balanced','function':'approved()',},
-			 {'name':'deny','class':'assertive','function':'modal.show()',},
 		 ]},
 		{'name':'Requested Schedule Change',
 		 'number':1,
 		 'details':'Requesting pickup time change from 4PM to 5PM on 11/12',
 		 'displayName':'Fullscreen Image',
-		 'icon':'ion-ios7-calendar',
+		 'icon':'',
+		 'iconColor':'post-avatar-man',
 		 'active':true,
-		 'iconColor':'post-icon-red',
 		 'date':'1288323623006',
 		 'buttons':[
 			 {'name':'approve','class':'balanced'},
@@ -73,14 +83,14 @@ angular.module('clientApp')
 		 'number':1,
 		 'details':'Requesting pickup time change from 4PM to 5PM on 11/12',
 		 'displayName':'Fullscreen Image',
-		 'icon':'ion-ios7-calendar',
+		 'icon':'',
 		 'active':true,
 		 'approved':false,
-		 'iconColor':'post-icon-red',
+		 'iconColor':'post-avatar-man',
 		 'date':'1288323623006',
 		 'buttons':[
-			 {'name':'approve','class':'balanced','function':'approve()'},
-			 {'name':'deny','class':'assertive','function':'modal.show()'}
+			 {'name':'Approve','class':'balanced','function':'approve()'},
+			 {'name':'Reply','class':'energized','function':'modal.show()'}
 		 ]},
 		];
  //modal 
@@ -94,6 +104,9 @@ angular.module('clientApp')
 	$timeout(function() {
     $ionicScrollDelegate.scrollBottom([true]);
   },3000);
+	$scope.loginHide = function(){
+		$scope.loginHidden = true;
+	};
 	$scope.approve = function(){
 		$scope.approved = true;
 	};
