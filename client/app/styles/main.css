@@ -29,3 +29,12 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight:800;
 }
+.cd-timeline-content{
+	opacity:0.6;
+}
+.cd-timeline-content:hover{
+	opacity:1;
+}
+.post-active{
+	opacity:1;
+}

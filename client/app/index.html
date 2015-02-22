@@ -29,16 +29,16 @@
 				<!-- Tab 1 content -->
 				<ion-content overflow-scroll="true" class="timeline-container">
 					<section id="cd-timeline" class="cd-container">
-							<div class="cd-timeline-block" ng-repeat="post in posts">
+							<div class="cd-timeline-block" ng-repeat="post in posts" >
 								<div class="cd-timeline-img {{post.iconColor}}">
 									<i class="icon {{post.icon}}"></i>
 								</div> <!-- cd-timeline-img -->
-								<div class="cd-timeline-content">
+								<div class="cd-timeline-content"ng-class="{'post-active': post.active}">
 									<div class="cd-date upbringing-date">{{post.date | date:"MM/dd/yyyy 'at' h:mma"}}</div>
 									<h2 class="upbringing-title"><span>Nick</span> {{post.name}}</h2>
 									<p>{{post.details}}</p>
 									<div class="button-bar">
-										<a href="#0" class="button button-{{button.class}} " ng-repeat="button in post.buttons" ng-click="modal.show()">{{button.name}}</a>
+										<a href="#0" class="button button-{{button.class}} " ng-repeat="button in post.buttons" ng-click="modal.show()" ng-if="post.active">{{button.name}}</a>
 									</div>
 
 								</div> <!-- cd-timeline-content -->
@@ -53,36 +53,67 @@
 			</ion-tab>
 			<ion-tab  title="Awards" icon-on="ion-ios7-star" icon-off="ion-ios7-star-outline">
 				<!-- Tab 3 content -->
+					<ion-header-bar class="bar bar-header bar-positive">
+						<h1 class="title">Your Badges</h1>
+					</ion-header-bar>
+				<ion-content class="has-header">
+					<div class="row">
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/Award-512.png">
+						</div>
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/Wiggles-Badge.png">
+						</div>
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/birthday_badge.png">
+						</div>
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/good_parents.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/travel_kid.png">
+						</div>
+						<div class="col col-25">
+							<img class="full-image" src="images/badges/punctual_award.jpg">
+						</div>
+					</div>
+				</ion-content>
+
 			</ion-tab>
 
 		</ion-tabs>
 
 <!-- modal yo -->
-    <script id="templates/modal.html" type="text/ng-template">
-      <ion-modal-view>
-        <ion-header-bar class="bar bar-header bar-positive">
-          <h1 class="title">New Contact</h1>
-          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
-        </ion-header-bar>
-        <ion-content class="padding">
-          <div class="list">
-            <label class="item item-input">
-              <span class="input-label">First Name</span>
-              <input ng-model="newUser.firstName" type="text">
-            </label>
-            <label class="item item-input">
-              <span class="input-label">Last Name</span>
-              <input ng-model="newUser.lastName" type="text">
-            </label>
-            <label class="item item-input">
-              <span class="input-label">Email</span>
-              <input ng-model="newUser.email" type="text">
-            </label>
-            <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
-          </div>
-        </ion-content>
-      </ion-modal-view>
-    </script>
+		<script id="templates/modal.html" type="text/ng-template">
+				<ion-modal-view>
+					<ion-header-bar class="bar bar-header bar-positive">
+						<h1 class="title">Reply</h1>
+						<button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+					</ion-header-bar>
+	<div class="bar bar-subheader">
+  <p class="title">select the best answer</p>
+</div>
+					<ion-content class="padding has-subheader">
+						<div class="card">
+							<div class="item item-text-wrap">
+								This is a basic Card which contains an item that has wrapping text.
+							</div>
+						</div>
+						<div class="card">
+							<div class="item item-text-wrap">
+								This is a basic Card which contains an item that has wrapping text.
+							</div>
+						</div>
+						<div class="card">
+							<div class="item item-text-wrap">
+								This is a basic Card which contains an item that has wrapping text.
+							</div>
+						</div>
+					</ion-content>
+				</ion-modal-view>
+		</script>
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -103,8 +134,7 @@
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
-		<script src="bower_components/ionic/js/ionic.bundle.js"></script>
-		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>

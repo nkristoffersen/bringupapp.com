@@ -14,6 +14,7 @@ angular.module('clientApp')
 		 'number':1,
 		 'displayName':'Fullscreen Image',
 		 'icon':'ion-ios7-person',
+		 'active':false,
 		 'iconColor':'post-icon-blue',
 		 'date':'1288323623006',
 		 'buttons':[
@@ -25,6 +26,7 @@ angular.module('clientApp')
 		 'details':'Requesting pickup time change from 4PM to 5PM on 11/12',
 		 'displayName':'Fullscreen Image',
 		 'icon':'ion-ios7-calendar',
+		 'active':true,
 		 'iconColor':'post-icon-red',
 		 'date':'1288323623006',
 		 'buttons':[
