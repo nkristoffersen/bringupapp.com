@@ -33,7 +33,7 @@
 								<div class="cd-timeline-img {{post.iconColor}}">
 									<i class="icon {{post.icon}}"></i>
 								</div> <!-- cd-timeline-img -->
-								<div class="cd-timeline-content"ng-class="{'post-active': post.active}">
+								<div class="cd-timeline-content"ng-class="{'post-active': post.active, 'post-approved': approved}">
 									<div class="cd-date upbringing-date">{{post.date | date:"MM/dd/yyyy 'at' h:mma"}}</div>
 									<h2 class="upbringing-title">{{post.name}}</h2>
 									<p>{{post.details}}</p>
